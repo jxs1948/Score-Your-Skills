@@ -1,0 +1,28 @@
+<% provide(:title, "Edit scoresheet") %>
+<h1>Update your Scoresheet</h1>
+
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :Team %>  
+    <%= f.text_field :content %>
+    <%= f.label :Correctness%>  
+    <%= f.text_field :correctness %>
+    <%= f.label :Creativity %> 
+    <%= f.text_field :creativity %>
+    <%= f.label :Relevance %>  
+    <%= f.text_field :relevance %>
+    <%= f.label :Sustainability %>  
+    <%= f.text_field :sustainability %>
+    <%= f.label :user_experience %> 
+    <%= f.text_field :user_experience %>
+  </div>
+  <%= f.submit "Save updated Scores", class: "btn btn-primary" %>
+  <span class="picture">
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+<% end %>
+
+<script type="text/javascript">
+
+</script>

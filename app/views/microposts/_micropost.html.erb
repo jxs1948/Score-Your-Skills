@@ -1,0 +1,38 @@
+<li id="micropost-<%= micropost.id %>">
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <span class="user"><%= link_to micropost.user.name, micropost.user %> </span>
+  <span class="responstable">
+      <table >
+      <thead>
+      <tr>
+        
+        <th> Team </th>
+        <th> Correctness</th>
+        <th> Creativity</th>
+        <th> Relevance </th>
+        <th> Sustainability</th>
+        <th> User Experience</th>
+      </tr>
+      </thead>
+      <tr>
+        
+        <td>  <%= micropost.content %> </td>
+        <td>  <%= micropost.correctness %> </td>
+        <td> <%= micropost.creativity %> </td>
+        <td> <%= micropost.relevance %> </td>
+        <td>  <%= micropost.sustainability %> </td>
+        <td> <%= micropost.user_experience %> </td>
+      </tr>
+      
+    </table>
+    
+    <%= image_tag micropost.picture.url if micropost.picture? %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    <% if current_user?(micropost.user) %>
+      <%= link_to "delete", micropost, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+      
+    <% end %>
+  </span>

@@ -1,0 +1,23 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :Team %>  
+    <%= f.text_field :content, placeholder: "Enter team name"  %>
+    <%= f.label :Correctness%>  
+    <%= f.text_field :correctness, placeholder: "Score value on a scale of 5"  %>
+    <%= f.label :Creativity %> 
+    <%= f.text_field :creativity, placeholder: "Score value on a scale of 5"  %>
+    <%= f.label :Relevance %>  
+    <%= f.text_field :relevance, placeholder: "Score value on a scale of 5"  %>
+    <%= f.label :Sustainability %>  
+    <%= f.text_field :sustainability, placeholder: "Score value on a scale of 5"  %>
+    <%= f.label :user_experience %> 
+    <%= f.text_field :user_experience, placeholder: "Score value on a scale of 5"  %>
+  </div>
+  <%= f.submit "Submit Scores", class: "btn btn-primary" %>
+ 
+<% end %>
+
+<script type="text/javascript">
+
+</script>

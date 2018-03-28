@@ -1,0 +1,35 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+      <div class="col-md-8">
+      <h3>Scoresheets</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to Score your Skills  </h1>
+<br>
+    <h3>
+     You've come to the right place if you are willing to be one of a kind</h3>
+    <h2> Be a <b>JUDGE</b> and evaluate the teams on the basis of their skills </h2>
+    <h5>More details in <%= link_to "About",   about_path %> </h5>
+    <br>
+    <br>
+    
+    <%= link_to "Sign up ", signup_path, class: "btn btn-lg btn-custom" %>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+ 
+<% end %>
